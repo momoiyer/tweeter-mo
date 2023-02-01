@@ -9,6 +9,29 @@ console.log("Start of client js file!");
 
 $(document).ready(function() { //JQuery codes awlays need to be inside .ready???
 
+  //Form SUBMISSION
+  $("#submitTweet").on('submit', (function(event) {
+    // prevent the default form submission behaviour
+    event.preventDefault();
+
+    // Serialize the form data
+    const tweet = $(this).serialize();
+
+    // Use the jQuery library to submit a POST request that sends the serialized data to the server
+    $.post("/tweets/", tweet);
+  }));
+
+
+  //Responsible for FETCHING tweets from the http://localhost:8080/tweets page.
+  const loadTweets = function() {
+    $.get("http://localhost:8080/tweets", function(data, status) {
+      //rendering call for all tweets with fetched data
+      renderTweets(data);
+    });
+  };
+
+  loadTweets();
+
   //to render each tweet using createTweetElement function
   const renderTweets = function(tweets) {
     // loops through tweets and calls createTweetElement for each tweet
@@ -39,7 +62,7 @@ $(document).ready(function() { //JQuery codes awlays need to be inside .ready???
 
     //tweet footer data
     const $footer = $(`<footer> </footer>`);
-    const $days = $(`<p> ${tweet.created_at} </p>`);
+    const $days = $(`<p> ${timeago.format(tweet.created_at)}</p>`);
     const $icons = $(`  <div>
                           <i class="fa-solid fa-flag"></i>
                           <i class="fa-solid fa-retweet"></i>
@@ -52,51 +75,5 @@ $(document).ready(function() { //JQuery codes awlays need to be inside .ready???
 
     return $tweetArticle;
   };
-
-  // Fake data taken from initial-tweets.json
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd"
-      },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ];
-
-  //rendering call for all tweets
-  renderTweets(data);
-
-
-  //FORM SUBMISSION
-
-  // Use the jQuery library to add an event listener for submit.
-  $("#submitTweet").on('submit', (function(event) {
-    // prevent the default form submission behaviour
-    event.preventDefault();
-
-    // Serialize the form data
-    const tweet = $(this).serialize();
-
-    // Use the jQuery library to submit a POST request that sends the serialized data to the server
-    $.post("/tweets/", tweet);
-  }));
-
 });
 
