@@ -48,3 +48,22 @@
 .counter-red {
   color: red;
 }
+
+.error {
+  visibility: hidden;
+  /* color: red; */
+
+}
+
+.displayError {
+  visibility: visible;
+  color: white;
+  background: red !important;
+  padding: 10px !important;
+  border-radius: 0 !important;
+  position: relative;
+  display: inline-block !important;
+  box-shadow: 1px 1px 1px #aaaaaa;
+  margin-top: 10px;
+  width: 100%;
+}

@@ -9,6 +9,8 @@ console.log("Start of client js file!");
 
 $(document).ready(function() { //JQuery codes awlays need to be inside .ready???
 
+
+  $(".error").slideUp();
   //Form SUBMISSION
   $("#submitTweet").on('submit', (function(event) {
     // prevent the default form submission behaviour
@@ -17,13 +19,20 @@ $(document).ready(function() { //JQuery codes awlays need to be inside .ready???
     // Serialize the form data
     const tweetQueryString = $(this).serialize();
 
-    //validation
+    //Validation
+
+    //reset error element
+    $(".error").removeClass("displayError").slideUp();
+
     const inputText = tweetQueryString.slice(5);
     const counter = Number($(this).find(".counter").val());
     let errorMessage = !inputText ? "Tweet cannot be empty!" : (counter < 0 ? "Tweet is too long" : "");
 
+    //if error exists, show error element with appropiate message
     if (errorMessage) {
-      alert(errorMessage);
+      $(".error").slideDown("", function() {
+        $(".error").addClass("displayError").html(errorMessage);
+      });
     } else {
       // Use the jQuery library to submit a POST request that sends the serialized data to the server
       $.post("/tweets/", tweetQueryString).done(function() {
@@ -31,8 +40,16 @@ $(document).ready(function() { //JQuery codes awlays need to be inside .ready???
         loadTweets();
       });
 
+      $(this).find("#tweet-text").val('');
     }
   }));
+
+  const escape = function(str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
 
 
   //Responsible for FETCHING tweets from the http://localhost:8080/tweets page.
@@ -70,7 +87,7 @@ $(document).ready(function() { //JQuery codes awlays need to be inside .ready???
 
 
     //actual tweet data and divider
-    const $tweetText = $(`<p>${tweet.content.text}</p>`);
+    const $tweetText = $(`<p>${escape(tweet.content.text)}</p>`);
     const $divider = $(`<div class="line-break"></div>`);
 
     //tweet footer data
