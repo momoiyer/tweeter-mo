@@ -15,10 +15,23 @@ $(document).ready(function() { //JQuery codes awlays need to be inside .ready???
     event.preventDefault();
 
     // Serialize the form data
-    const tweet = $(this).serialize();
+    const tweetQueryString = $(this).serialize();
 
-    // Use the jQuery library to submit a POST request that sends the serialized data to the server
-    $.post("/tweets/", tweet);
+    //validation
+    const inputText = tweetQueryString.slice(5);
+    const counter = Number($(this).find(".counter").val());
+    let errorMessage = !inputText ? "Tweet cannot be empty!" : (counter < 0 ? "Tweet is too long" : "");
+
+    if (errorMessage) {
+      alert(errorMessage);
+    } else {
+      // Use the jQuery library to submit a POST request that sends the serialized data to the server
+      $.post("/tweets/", tweetQueryString).done(function() {
+        $('#tweets-container').empty();
+        loadTweets();
+      });
+
+    }
   }));
 
 
