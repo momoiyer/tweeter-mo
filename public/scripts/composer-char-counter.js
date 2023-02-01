@@ -1,15 +1,10 @@
-console.log("Start of composer js file!");
-
 let charCount = 140;
 $(document).ready(function() {
-  console.log("Doucment is ready!");
-
 
   $('#tweet-text').on('input', (function() {
     const length = this.value.length;
     charCount = 140 - length;
   }));
-
 
   $('#tweet-text').on('keyup', (function() {
     const parent = this.parentNode;
@@ -20,5 +15,4 @@ $(document).ready(function() {
       $(parent).find(".counter").html(charCount).removeClass("counter-red");
     }
   }));
-
 });
