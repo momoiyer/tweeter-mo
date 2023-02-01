@@ -83,5 +83,20 @@ $(document).ready(function() { //JQuery codes awlays need to be inside .ready???
   //rendering call for all tweets
   renderTweets(data);
 
+
+  //FORM SUBMISSION
+
+  // Use the jQuery library to add an event listener for submit.
+  $("#submitTweet").on('submit', (function(event) {
+    // prevent the default form submission behaviour
+    event.preventDefault();
+
+    // Serialize the form data
+    const tweet = $(this).serialize();
+
+    // Use the jQuery library to submit a POST request that sends the serialized data to the server
+    $.post("/tweets/", tweet);
+  }));
+
 });
 
