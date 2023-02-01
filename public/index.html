@@ -16,6 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap"
       rel="stylesheet">
 
+    <!-- Logos -->
     <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
       integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
@@ -32,6 +33,7 @@
       src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="./scripts/composer-char-counter.js"></script>
   </head>
 
   <body>
@@ -60,13 +62,13 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form action="/tweets" method="POST">
-          <!-- <label for="tweet-text">What are you humming about?</label> -->
-          <textarea name="text" id="tweet-text"
-            placeholder="What are you humming about?"></textarea>
+        <form action="/tweets/" method="POST">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
           <div class="tweetFormButton">
             <button class="tweetbtn" type="submit">TWEET</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
+            <output name="counter" class="counter"
+              for="tweet-text">140</output>
           </div>
         </form>
       </section>
