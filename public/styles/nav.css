@@ -1,7 +1,7 @@
 .logo-nav {
-  height: 120px;
+  height: 80px;
   width: 100%;
-  background-color: #4056A1;
+  background-color: transparent;
   color: #FFFFFF;
   padding: 0 1.5em 0.75em 1.5em;
   display: flex;
@@ -19,8 +19,79 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  visibility: visible;
 }
 
 .fa-angles-down {
-  color: red;
+  color: red !important;
+}
+
+.newTweet:hover>.fa-angles-down {
+  animation: jumpInfinite 1.5s infinite;
+}
+
+@keyframes jumpInfinite {
+  0% {
+    transform: translateY(5%);
+  }
+
+  15% {
+    transform: translateY(10%);
+  }
+
+  30% {
+    transform: translateY(15%);
+  }
+
+  45% {
+    transform: translateY(20%);
+  }
+
+  60% {
+    transform: translateY(15%);
+  }
+
+  75% {
+    transform: translateY(10%);
+  }
+
+  90% {
+    transform: translateY(5%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+
+#scrollTop {
+  background-color: red;
+  height: 3em;
+  width: 3em;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 1em;
+  bottom: 1em;
+  position: fixed;
+  visibility: hidden;
+}
+
+#scrollTop i {
+  color: white;
+  font-size: 1.3em;
+}
+
+.showNav {
+  visibility: visible !important;
+}
+
+.hideNav {
+  visibility: hidden !important;
+}
+
+#scrollTop:hover>.fa-angles-up {
+  animation: jumpInfinite 1.5s infinite;
 }

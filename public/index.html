@@ -35,6 +35,7 @@
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="./scripts/composer-char-counter.js"></script>
+    <script type="text/javascript" src="./scripts/composer-scroll-button.js"></script>
     <!-- time since calculation -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
@@ -49,7 +50,7 @@
 
       <div class="newTweet">
         <span><strong>Write</strong> a new tweet</span>
-        <i class="fa-solid fa-angles-down"></i>
+        <i id="toggle" class="fa-solid fa-angles-down"></i>
       </div>
     </nav>
 
@@ -57,7 +58,6 @@
       <div>
         <img src="/images/profile-hex.png">
       </div>
-      <br>
       <div>
         <h2>Amy Mansell</h2>
       </div>
@@ -78,9 +78,10 @@
           </div>
         </form>
       </section>
-
       <section id="tweets-container">
       </section>
+
+      <div id="scrollTop"><i class="fa-solid fa-angles-up"></i></div>
     </main>
   </body>
 </html>

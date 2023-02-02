@@ -17,10 +17,6 @@
   background-color: transparent;
 }
 
-#tweet-text:hover {
-  box-shadow: 0 0 2px gray;
-}
-
 #tweet-text:focus {
   border-color: gray;
 }
@@ -51,6 +47,7 @@
 
 .error {
   visibility: hidden;
+  display: none;
   /* color: red; */
 
 }
@@ -58,11 +55,11 @@
 .displayError {
   visibility: visible;
   color: white;
-  background: red !important;
-  padding: 10px !important;
-  border-radius: 0 !important;
+  background: red;
+  padding: 10px;
+  border-radius: 0;
   position: relative;
-  display: inline-block !important;
+  display: inline-block;
   box-shadow: 1px 1px 1px #aaaaaa;
   margin-top: 10px;
   width: 100%;

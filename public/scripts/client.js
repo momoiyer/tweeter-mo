@@ -9,6 +9,13 @@ console.log("Start of client js file!");
 
 $(document).ready(function() { //JQuery codes awlays need to be inside .ready???
 
+  $("#toggle").on("click", function() {
+    $(".new-tweet").slideToggle('slow', function() {
+      if (!$(this).is(':hidden')) {
+        $("#tweet-text").focus();
+      }
+    });
+  });
 
   $(".error").slideUp();
   //Form SUBMISSION

@@ -1,9 +1,9 @@
 .profile-header {
-  height: 638px;
+  height: 450px;
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   background-color: #728a8d;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
