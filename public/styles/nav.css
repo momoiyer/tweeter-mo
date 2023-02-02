@@ -1,9 +1,5 @@
+/* nav bar style */
 nav {
-
-  position: fixed;
-}
-
-.logo-nav {
   height: 80px;
   width: 100%;
   background-color: transparent;
@@ -12,28 +8,32 @@ nav {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
+  position: fixed;
 }
 
-.logo {
+/* nav bar logo style */
+nav>span {
   font-family: 'Bungee', sans-serif;
   font-size: 1.5em;
 }
 
-.newTweet {
+/* nav bar new tweet toggle style */
+.new-tweet-toggle {
   display: flex;
   flex-direction: column;
   align-items: center;
   visibility: visible;
 }
 
-.fa-angles-down {
+#toggle-arrow-down {
   color: red !important;
 }
 
-.newTweet:hover>.fa-angles-down {
+.new-tweet-toggle:hover>#toggle-arrow-down {
   animation: jumpInfinite 1.5s infinite;
 }
 
+/* toggle arrow animation for smooth up and down */
 @keyframes jumpInfinite {
   0% {
     transform: translateY(5%);
@@ -68,7 +68,7 @@ nav {
   }
 }
 
-
+/* scroll nav to top style */
 #scrollTop {
   background-color: red;
   height: 3em;
@@ -88,6 +88,11 @@ nav {
   font-size: 1.3em;
 }
 
+#scrollTop:hover>.fa-angles-up {
+  animation: jumpInfinite 1.5s infinite;
+}
+
+/* style to show/hide scroll nav */
 .showNav {
   visibility: visible !important;
 }
@@ -96,14 +101,10 @@ nav {
   visibility: hidden !important;
 }
 
-#scrollTop:hover>.fa-angles-up {
-  animation: jumpInfinite 1.5s infinite;
-}
 
-
-/* Desktop styles */
+/* Desktop styles for nav*/
 @media only screen and (min-width: 1024px) {
-  .logo-nav {
+  nav {
     background-color: rgb(35, 61, 178);
   }
 }

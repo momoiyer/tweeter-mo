@@ -29,10 +29,10 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
-.container {
+/* Main body style for add and display tweet */
+main {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: flex-start;
   padding: 5% 5% 0 5%;
 }
@@ -40,12 +40,9 @@ body {
 
 /* Desktop styles */
 @media only screen and (min-width: 1024px) {
-  .container {
+  main {
     width: 60%;
     padding-top: 10%;
-    /* line-height: 40%; */
-    /* align-items: flex-end; */
-    /* height: 700px; */
   }
 
   body {

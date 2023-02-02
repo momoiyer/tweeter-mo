@@ -1,3 +1,4 @@
+/* new tweet section style */
 .new-tweet {
   width: 100%;
   display: flex;
@@ -5,6 +6,7 @@
   justify-content: flex-start;
 }
 
+/* new tweet submit form style */
 .new-tweet label {
   color: #545149;
 }
@@ -15,6 +17,8 @@
   border-width: 0 0 2px;
   border-color: black;
   background-color: transparent;
+  resize: none;
+  height: 40px;
 }
 
 #tweet-text:focus {
@@ -22,7 +26,11 @@
 }
 
 
-.tweetFormButton {
+#tweet-text:hover {
+  box-shadow: 0px 3px rgb(208, 204, 204);
+}
+
+#tweet-form div {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,11 +38,15 @@
   font-family: 'Bungee', sans-serif;
 }
 
-.tweetbtn {
+#tweet-form button {
   background-color: royalblue;
   color: white;
   border: 0;
   padding: 0.3em;
+}
+
+#tweet-form button:hover {
+  box-shadow: 5px 5px rgb(208, 204, 204);
 }
 
 .counter {
@@ -45,11 +57,10 @@
   color: red;
 }
 
-.error {
+/* error line popup for tweet error */
+.tweet-error {
   visibility: hidden;
   display: none;
-  /* color: red; */
-
 }
 
 .displayError {

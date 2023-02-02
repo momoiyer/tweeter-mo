@@ -1,12 +1,9 @@
+/* old tweets display session style */
 #tweets-container {
   width: 100%;
 }
 
-textarea {
-  resize: none;
-  height: 40px;
-}
-
+/* tweet article style */
 .tweet {
   width: 100%;
   display: flex;
@@ -16,28 +13,26 @@ textarea {
   margin-bottom: 2em;
 }
 
-/* .tweet:hover {
+.tweet:hover {
   box-shadow: 5px 10px rgb(208, 204, 204);
-} */
+}
 
-/* .tweet head */
-
-article.tweet header,
-article.tweet footer {
+.tweet header,
+.tweet footer {
   display: flex;
   align-items: center;
 }
 
-article.tweet header {
+.tweet header {
   padding: 0.5em 1em 0.5em 0.5em;
 }
 
-article.tweet footer {
+.tweet footer {
   justify-content: space-between;
 }
 
-article.tweet p,
-article.tweet div {
+.tweet p,
+.tweet div {
   padding: 0 1em 0;
 }
 

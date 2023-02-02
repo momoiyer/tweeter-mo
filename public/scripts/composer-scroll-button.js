@@ -1,7 +1,7 @@
 $(document).ready(function() {
   var $document = $(document),
     $scrollNav = $('#scrollTop'),
-    $newTweetNav = $('.newTweet'),
+    $newTweetNav = $('.new-tweet-toggle'),
     show = 'showNav',
     hide = 'hideNav';
 

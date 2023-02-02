@@ -9,7 +9,7 @@ console.log("Start of client js file!");
 
 $(document).ready(function() { //JQuery codes awlays need to be inside .ready???
 
-  $("#toggle").on("click", function() {
+  $("#toggle-arrow-down").on("click", function() {
     $(".new-tweet").slideToggle('slow', function() {
       if (!$(this).is(':hidden')) {
         $("#tweet-text").focus();
@@ -17,9 +17,9 @@ $(document).ready(function() { //JQuery codes awlays need to be inside .ready???
     });
   });
 
-  $(".error").slideUp();
+  $(".tweet-error").slideUp();
   //Form SUBMISSION
-  $("#submitTweet").on('submit', (function(event) {
+  $("#tweet-form").on('submit', (function(event) {
     // prevent the default form submission behaviour
     event.preventDefault();
 
@@ -29,7 +29,7 @@ $(document).ready(function() { //JQuery codes awlays need to be inside .ready???
     //Validation
 
     //reset error element
-    $(".error").removeClass("displayError").slideUp();
+    $(".tweet-error").removeClass("displayError").slideUp();
 
     const inputText = tweetQueryString.slice(5);
     const counter = Number($(this).find(".counter").val());
@@ -37,8 +37,8 @@ $(document).ready(function() { //JQuery codes awlays need to be inside .ready???
 
     //if error exists, show error element with appropiate message
     if (errorMessage) {
-      $(".error").slideDown("", function() {
-        $(".error").addClass("displayError").html(errorMessage);
+      $(".tweet-error").slideDown("", function() {
+        $(".tweet-error").addClass("displayError").html(errorMessage);
       });
     } else {
       // Use the jQuery library to submit a POST request that sends the serialized data to the server

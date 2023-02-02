@@ -30,33 +30,36 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
-    <link rel="stylesheet" href="./styles/tweet-container.css" type="text/css"
-      />
+    <link rel="stylesheet" href="./styles/tweet-container.css" type="text/css"/>
     <!-- External JS -->
     <script
       src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
-    <script type="text/javascript" src="./scripts/composer-char-counter.js"></script>
-    <script type="text/javascript" src="./scripts/composer-scroll-button.js"></script>
     <!-- time since calculation -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
       integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
       crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- App JS -->
+    <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="./scripts/composer-char-counter.js"></script>
+    <script type="text/javascript" src="./scripts/composer-scroll-button.js"></script>
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
-    <nav class="logo-nav">
-      <span class="logo">tweeter</span>
+    <nav>
+      <!-- logo -->
+      <span>tweeter</span>
 
-      <div class="newTweet">
+      <!-- new tweet toggle arrow -->
+      <div class="new-tweet-toggle">
         <span><strong>Write</strong> a new tweet</span>
-        <i id="toggle" class="fa-solid fa-angles-down"></i>
+        <i id="toggle-arrow-down" class="fa-solid fa-angles-down"></i>
       </div>
     </nav>
 
+    <!-- profile image and name -->
     <header class="profile-header">
       <div>
         <img src="/images/profile-hex.png">
@@ -68,22 +71,26 @@
 
 
     <!-- Page-specific (main) content here -->
-    <main class="container">
+    <main>
+      <!-- new tweet form input -->
       <section class="new-tweet">
-        <form id="submitTweet" action="/tweets/" method="POST">
+        <form id="tweet-form" action="/tweets/" method="POST">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
-          <p class="error">Error Message</p>
-          <div class="tweetFormButton">
-            <button class="tweetbtn" type="submit">TWEET</button>
+          <p class="tweet-error">Error Message</p>
+          <div>
+            <button type="submit">TWEET</button>
             <output name="counter" class="counter"
               for="tweet-text">140</output>
           </div>
         </form>
       </section>
+
+      <!-- old tweets display area -->
       <section id="tweets-container">
       </section>
 
+      <!-- scroll nav to go back to top -->
       <div id="scrollTop"><i class="fa-solid fa-angles-up"></i></div>
     </main>
   </body>
