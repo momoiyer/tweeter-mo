@@ -36,3 +36,19 @@ body {
   align-items: flex-start;
   padding: 5% 5% 0 5%;
 }
+
+
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
+  .container {
+    width: 60%;
+    padding-top: 10%;
+    /* line-height: 40%; */
+    /* align-items: flex-end; */
+    /* height: 700px; */
+  }
+
+  body {
+    display: flex;
+  }
+}

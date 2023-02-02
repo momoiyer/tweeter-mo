@@ -4,14 +4,14 @@
 
 textarea {
   resize: none;
-  padding: 0;
+  height: 40px;
 }
 
 .tweet {
   width: 100%;
   display: flex;
   flex-direction: column;
-  /* border: 0.1em solid black; */
+  border: 0.1em solid black;
   margin-top: 2em;
   margin-bottom: 2em;
 }

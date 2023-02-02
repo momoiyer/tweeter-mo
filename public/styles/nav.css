@@ -1,3 +1,8 @@
+nav {
+
+  position: fixed;
+}
+
 .logo-nav {
   height: 80px;
   width: 100%;
@@ -7,7 +12,6 @@
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  position: fixed;
 }
 
 .logo {
@@ -94,4 +98,12 @@
 
 #scrollTop:hover>.fa-angles-up {
   animation: jumpInfinite 1.5s infinite;
+}
+
+
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
+  .logo-nav {
+    background-color: rgb(35, 61, 178);
+  }
 }
