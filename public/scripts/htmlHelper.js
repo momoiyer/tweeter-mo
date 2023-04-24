@@ -21,7 +21,7 @@ const createTweetElement = function(tweet) {
 
 
   //actual tweet data and divider
-  const $tweetText = $(`<p>${escape(tweet.content.text)}</p>`);
+  const $tweetText = $(`<p>${escape(tweet.content.text)}</p>`); //escapeText?
   const $divider = $(`<div class="line-break"></div>`);
 
   //tweet footer data

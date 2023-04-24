@@ -22,7 +22,7 @@ $(document).ready(function() {
     $(".tweet-error").removeClass("displayError").slideUp();
 
     //validate form input from validation.js
-    if (!validation(tweetQueryString, this)) {
+    if (!validation(tweetQueryString, this)) { //check input instead of serialized data
       // Use the jQuery library to submit a POST request that sends the serialized data to the server
       $.post("/tweets/", tweetQueryString).done(function() {
         $('#tweets-container').empty();
